@@ -1,4 +1,4 @@
-# 🧠 ONNX Qt Predictor
+ 🧠 ONNX Qt Predictor
 
 A C++ desktop application that performs real-time machine learning inference using [ONNX Runtime](https://onnxruntime.ai/) and [Qt6](https://www.qt.io/). This GUI app loads a pre-trained ONNX model and a JSON scaler to make predictions based on user input.
 
@@ -36,7 +36,7 @@ Edit
 - C++17 or higher
 - [Qt6 development libraries](https://doc.qt.io/qt-6/gettingstarted.html)
 - [ONNX Runtime C++](https://onnxruntime.ai/)
-- `nlohmann/json` (header-only, can be downloaded from: https://github.com/nlohmann/json)
+- `nlohmann/json` (header-only, download it from: https://github.com/nlohmann/json)
 
 Place the ONNX Runtime headers and library in the `./lib/onnxruntime` folder like so:
 
@@ -85,6 +85,31 @@ g++ -std=c++17 -O2 -o predictor main.o infer.o \
     -L./lib/onnxruntime/lib -lonnxruntime \
     -lQt6Widgets -lQt6Gui -lQt6Core \
     -Wl,-rpath,'$ORIGIN/./lib/onnxruntime/lib'
+🧪 Running the App
+Make sure the following files are in the same directory:
+
+predictor (compiled binary)
+
+model.onnx (your ONNX model)
+
+scaler.json (mean and scale for input normalization)
+
+Example scaler.json:
+
+json
+Copy
+Edit
+{
+  "mean": [100.0, 50.0, 25.0],
+  "scale": [10.0, 5.0, 2.5]
+}
+Then run:
+
+bash
+Copy
+Edit
+./predictor
+Input your values in the GUI, click Predict, and view the result instantly.
 
 🧠 How It Works
 Loads the ONNX model using Ort::Session.
@@ -95,14 +120,16 @@ Scales user input using mean and scale.
 
 Runs inference using ONNX Runtime.
 
-Displays prediction in the Qt GUI.
+Displays the prediction in a Qt GUI interface.
 
 🧰 Customization
-You can modify the number of input fields in main.cpp.
+Modify the number of input fields directly in main.cpp.
 
-To use a different model or scaler, replace model.onnx and scaler.json.
+Replace model.onnx with your own trained model.
 
-Add error handling and validation as needed for production use.
+Replace or update scaler.json with new preprocessing values.
+
+Add error checking or validation for robustness in production.
 
 📦 License
 This project is licensed under the MIT License.
@@ -110,7 +137,6 @@ This project is licensed under the MIT License.
 🙏 Acknowledgments
 ONNX Runtime
 
-Qt
+Qt Framework
 
 nlohmann/json
-

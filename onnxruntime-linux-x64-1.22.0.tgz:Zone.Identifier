@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://github.com/microsoft/onnxruntime/releases
+HostUrl=https://objects.githubusercontent.com/github-production-release-asset-2e65be/156939672/c4509b72-2595-4309-a6c8-ac9be0999e9e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250511%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250511T032709Z&X-Amz-Expires=300&X-Amz-Signature=b3e0aaa9ccd7782e6cffb57e495edc9baadb512d7a5ff3e8a6b20760d39cdf73&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Donnxruntime-linux-x64-1.22.0.tgz&response-content-type=application%2Foctet-stream
